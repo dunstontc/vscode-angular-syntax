@@ -2,16 +2,16 @@
   "repository": {
     "string": {
       "patterns": [
-        {
-          "name": "string.quoted.single.EXTENSION",
-          "begin": "'",
-          "end": "'",
-        },
-        {
-          "name": "string.quoted.double.EXTENSION",
-          "begin": "\"",
-          "end": "\"",
-        },
+        // {
+        //   "name": "string.quoted.single.angular-html",
+        //   "begin": "'",
+        //   "end": "'",
+        // },
+        // {
+        //   "name": "string.quoted.double.angular-html",
+        //   "begin": "\"",
+        //   "end": "\"",
+        // },
       ]
     }
   }

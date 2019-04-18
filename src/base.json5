@@ -3,6 +3,7 @@
 	"name": "angular-html",
 	"scopeName": "source.angular-html",
 	"patterns": [
+    { "include": "source.html" },
     { "include": "#comment" },
     { "include": "#constant" },
     { "include": "#entity" },
@@ -17,5 +18,142 @@
     { "include": "#type" },
     { "include": "#variable" },
   ],
-  "repository":{},
+  "repository":{
+    "entities": {
+      "patterns": [
+          {
+              "captures": {
+                  "3": {"name": "punctuation.definition.entity.html"},
+                  "1": {"name": "punctuation.definition.entity.html"}
+              },
+              "match": "(&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)",
+              "name": "constant.character.entity.html"
+          },
+          {
+              "match": "&",
+              "name": "invalid.illegal.bad-ampersand.html"
+          }
+      ]
+  },
+        // "unquoted-attribute": {
+        //     "match": "(?<==)(?:[^\\s<>/'\"]|/(?!>))+",
+        //     "name": "string.unquoted.html"
+        // },
+        // "string-single-quoted": {
+        //     "beginCaptures": {"0": {"name": "punctuation.definition.string.begin.html"}},
+        //     "patterns": [
+        //         {"include": "#angular-interpolations"},
+        //         {"include": "#entities"}
+        //     ],
+        //     "begin": "'",
+        //     "endCaptures": {"0": {"name": "punctuation.definition.string.end.html"}},
+        //     "end": "'",
+        //     "name": "string.quoted.single.html"
+        // },
+        // "string-double-quoted": {
+        //     "beginCaptures": {"0": {"name": "punctuation.definition.string.begin.html"}},
+        //     "patterns": [
+        //         {"include": "#angular-interpolations"},
+        //         {"include": "#entities"}
+        //     ],
+        //     "begin": "\"",
+        //     "endCaptures": {"0": {"name": "punctuation.definition.string.end.html"}},
+        //     "end": "\"",
+        //     "name": "string.quoted.double.html"
+        // },
+        // "angular-interpolations": {
+        //     "patterns": [
+        //         {
+        //             "beginCaptures": {"0": {"name": "punctuation.definition.generic.begin.html"}},
+        //             "patterns": [{"include": "source.js#expression"}],
+        //             "begin": "\\{\\{\\{?",
+        //             "endCaptures": {"0": {"name": "punctuation.definition.generic.end.html"}},
+        //             "end": "\\}\\}\\}?",
+        //             "name": "expression.embedded.angular"
+        //         }
+        //     ]
+        // },
+        // "angular-directives": {
+        //     "captures": {
+        //         "1": {"name": "entity.other.attribute-name.html"},
+        //         "7": {"name": "punctuation.separator.key-value.html"}
+        //     },
+        //     "begin": "((?:\\b(v-)|(\\*))([a-zA-Z0-9\\-]+)(?:\\:([a-zA-Z0-9\\-]+))?(?:\\.([a-zA-Z0-9\\-]+))*)\\s*(=)",
+        //     "end": "(?<='|\")|(?=[\\s<>`])",
+        //     "name": "meta.directive.angular",
+        //     "patterns": [
+        //         {
+        //             "beginCaptures": {"0": {"name": "punctuation.definition.string.begin.html"}},
+        //             "patterns": [{"include": "source.js#expression"}],
+        //             "begin": "\"",
+        //             "endCaptures": {"0": {"name": "punctuation.definition.string.end.html"}},
+        //             "end": "\"",
+        //             "name": "source.directive.angular"
+        //         },
+        //         {
+        //             "beginCaptures": {"0": {"name": "punctuation.definition.string.begin.html"}},
+        //             "patterns": [{"include": "source.js#expression"}],
+        //             "begin": "'",
+        //             "endCaptures": {"0": {"name": "punctuation.definition.string.end.html"}},
+        //             "end": "'",
+        //             "name": "source.directive.angular"
+        //         }
+        //     ]
+        // },
+        // "tag-generic-attribute": {
+        //     "match": "(?<=[^=])\\b([a-zA-Z0-9:-]+)",
+        //     "name": "entity.other.attribute-name.html"
+        // },
+        // "tag-id-attribute": {
+        //     "captures": {
+        //         "2": {"name": "punctuation.separator.key-value.html"},
+        //         "1": {"name": "entity.other.attribute-name.id.html"}
+        //     },
+        //     "begin": "\\b(id)\\b\\s*(=)",
+        //     "end": "(?!\\G)(?<='|\"|[^\\s<>/])",
+        //     "name": "meta.attribute-with-value.id.html",
+        //     "patterns": [
+        //         {
+        //             "beginCaptures": {"0": {"name": "punctuation.definition.string.begin.html"}},
+        //             "patterns": [
+        //                 {"include": "#angular-interpolations"},
+        //                 {"include": "#entities"}
+        //             ],
+        //             "begin": "\"",
+        //             "endCaptures": {"0": {"name": "punctuation.definition.string.end.html"}},
+        //             "end": "\"",
+        //             "name": "string.quoted.double.html",
+        //             "contentName": "meta.toc-list.id.html"
+        //         },
+        //         {
+        //             "beginCaptures": {"0": {"name": "punctuation.definition.string.begin.html"}},
+        //             "patterns": [
+        //                 {"include": "#angular-interpolations"},
+        //                 {"include": "#entities"}
+        //             ],
+        //             "begin": "'",
+        //             "endCaptures": {"0": {"name": "punctuation.definition.string.end.html"}},
+        //             "end": "'",
+        //             "name": "string.quoted.single.html",
+        //             "contentName": "meta.toc-list.id.html"
+        //         },
+        //         {
+        //             "captures": {"0": {"name": "meta.toc-list.id.html"}},
+        //             "match": "(?<==)(?:[^\\s<>/'\"]|/(?!>))+",
+        //             "name": "string.unquoted.html"
+        //         }
+        //     ]
+        // },
+        "tag-stuff": {
+            "patterns": [
+                {"include": "#angular-directives"},
+                {"include": "#tag-id-attribute"},
+                {"include": "#tag-generic-attribute"},
+                {"include": "#string-double-quoted"},
+                {"include": "#string-single-quoted"},
+                {"include": "#unquoted-attribute"}
+            ]
+        }
+      ,
+  },
 }

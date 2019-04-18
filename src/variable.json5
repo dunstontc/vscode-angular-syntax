@@ -1,7 +1,15 @@
 {
   "repository": {
     "variable": {
-      "patterns": []
+      "patterns": [
+        // {
+        //   "name": "variable.other.angular-html",
+        //   "match": "(\\()(\\w+)(\\))(?=\\=)",
+        //   // "captures": {
+
+        //   // },
+        // }
+      ]
     }
   }
 }
