@@ -1,7 +1,16 @@
 {
   "repository": {
     "invalid": {
-      "patterns": []
+      "patterns": [
+        {
+          "match": "<>",
+          "name": "invalid.illegal.incomplete.html"
+        },
+        {
+          "match": "<",
+          "name": "invalid.illegal.bad-angle-bracket.html"
+        },
+      ]
     }
   }
 }

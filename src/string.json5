@@ -1,18 +1,30 @@
 {
   "repository": {
-    "string": {
+    "unquoted-attribute": {
+      "name": "string.unquoted.html",
+      "match": "(?<==)(?:[^\\s<>/'\"]|/(?!>))+",
+    },
+    "string-single-quoted": {
+      "name": "string.quoted.single.html",
+      "begin": "'",
+      "end": "'",
+      "beginCaptures": {"0": {"name": "punctuation.definition.string.begin.html"}},
+      "endCaptures": {"0": {"name": "punctuation.definition.string.end.html"}},
       "patterns": [
-        {
-          "name": "string.quoted.single.EXTENSION",
-          "begin": "'",
-          "end": "'",
-        },
-        {
-          "name": "string.quoted.double.EXTENSION",
-          "begin": "\"",
-          "end": "\"",
-        },
-      ]
+        {"include": "#angular-interpolations"},
+        {"include": "#entities"}
+      ],
+    },
+    "string-double-quoted": {
+      "name": "string.quoted.double.html",
+      "begin": "\"",
+      "end": "\"",
+      "beginCaptures": {"0": {"name": "punctuation.definition.string.begin.html"}},
+      "endCaptures": {"0": {"name": "punctuation.definition.string.end.html"}},
+      "patterns": [
+        {"include": "#angular-interpolations"},
+        {"include": "#entities"}
+      ],
     }
   }
 }

@@ -1,7 +1,18 @@
 {
   "repository": {
     "comment": {
-      "patterns": []
+      "patterns": [
+        {
+          "name": "comment.block.html",
+          "begin": "<!--",
+          "end": "--\\s*>",
+          "captures": {"0": {"name": "punctuation.definition.comment.html"}},
+          "patterns": [{
+            "match": "--",
+            "name": "invalid.illegal.bad-comments-or-CDATA.html"
+          }]
+        },
+      ]
     }
   }
 }

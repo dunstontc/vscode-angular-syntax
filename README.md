@@ -20,6 +20,7 @@
 - [kkos/oniguruma/doc/RE](https://github.com/kkos/oniguruma/blob/master/doc/RE)
 - [Scope Naming](https://www.sublimetext.com/docs/3/scope_naming.html)
 - [vscode-textmate](https://github.com/Microsoft/vscode-textmate)
+- [Angular Cheatsheet](https://angular.io/guide/cheatsheet)
 
 ## [License](https://github.com/dunstontc/vscode-angular-syntax/blob/master/LICENSE)
 
